@@ -8,11 +8,22 @@ class Program
         //int magicNumber;
         int guessNumber;
         int number ;
+        int guessCount = 0;
+        bool playAgain = true;
         Console.WriteLine("Hello World! This is the Exercise3 Project.");
+        
+
+ do
+ {
+    // Play Again loop
         Random r = new Random();
-        number = r.Next(1, 100);
-    do
-    {
+        number = r.Next(1, 101);
+        
+        guessNumber = -1;
+
+    
+     do
+      {
         
     
             //Console.Write("What is the magic number: ");
@@ -35,7 +46,27 @@ class Program
             {
                 Console.WriteLine("You guessed it!");
             }
-
+          guessCount ++;
         } while (guessNumber != number); 
-    }
+       
+        Console.WriteLine($"You have guessed {guessCount} times");
+
+    
+
+// PLAY AGAIN
+       Console.WriteLine("Do you want to play again: ?");
+       ans = Console.ReadLine();
+
+       if (ans == "YES" || ans == "yes" || ans == "Yes")
+       {
+         playAgain = true;
+       }
+       else
+       {
+        playAgain = false;
+       }
+    
+     }while (playAgain);
+}
+
 }
