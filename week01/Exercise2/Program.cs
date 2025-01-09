@@ -8,6 +8,7 @@ class Program
         string input;
         int gradePercentage;
         string letter;
+        
         Console.WriteLine("Hello World! This is the Exercise2 Project.");
         Console.WriteLine("******************************************");
         Console.WriteLine("");
@@ -17,24 +18,27 @@ class Program
         Console.Write("Please enter your grade percentage: ");
         input = Console.ReadLine();
         gradePercentage = int.Parse(input);
-        if(gradePercentage >= 90)
+        int remainder = gradePercentage % 10;
+
+        if(gradePercentage >= 90 && remainder >= 7)
         {
             //Console.WriteLine("You score 'A' ");
-            letter = "A";
-            if(gradePercentage >=70)
+            letter = "A+";
+           /* if(gradePercentage >=70)
             {
                 Console.WriteLine("Congratulations, You Passed!!!");
             }
             else
             {
                 Console.WriteLine("Please try harder next time.");
-            }
+            }*/
         }  
 
         else if (gradePercentage >= 80)
         {
           //  Console.WriteLine("You score 'B' ");
             letter = "B";
+            /*
             if(gradePercentage >=70)
             {
                 Console.WriteLine("Congratulations, You Passed!!!");
@@ -42,13 +46,13 @@ class Program
             else
             {
                 Console.WriteLine("Please try harder next time.");
-            }
+            }*/
         }
 
          else if (gradePercentage >= 70)
         {
            // Console.WriteLine("You score 'C' ");
-            letter = "C";
+            letter = "C";/*
             if(gradePercentage >=70)
             {
                 Console.WriteLine("Congratulations, You Passed!!!");
@@ -56,13 +60,14 @@ class Program
             else
             {
                 Console.WriteLine("Please try harder next time.");
-            }
+            }*/
         }
 
          else if (gradePercentage >= 60)
         {
             //Console.WriteLine("You score 'D' ");
             letter = "D";
+            /*
             if(gradePercentage >=70)
             {
                 Console.WriteLine("Congratulations, You Passed!!!");
@@ -70,12 +75,13 @@ class Program
             else
             {
                 Console.WriteLine("Please try harder next time.");
-            }
+            }*/
         }
 
         else{
            // Console.WriteLine("You score 'F'");
             letter = "F";
+            /*
             if(gradePercentage >=70)
             {
                 Console.WriteLine("Congratulations, You Passed!!!");
@@ -83,10 +89,18 @@ class Program
             else
             {
                 Console.WriteLine("Please try harder next time.");
-            }
+            }*/
         }
 
-        Console.WriteLine(letter);
+        Console.WriteLine($"Your grade is: {letter}");
+        if(gradePercentage >=70)
+            {
+                Console.WriteLine("Congratulations, You Passed!!!");
+            }
+            else
+            {
+                Console.WriteLine("Please try harder next time.");
+            }
 
     }
 }
