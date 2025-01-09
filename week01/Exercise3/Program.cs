@@ -8,7 +8,11 @@ class Program
         int magicNumber;
         int guessNumber;
         Console.WriteLine("Hello World! This is the Exercise3 Project.");
+      
+   do
+   {
 
+   
         Console.Write("What is the magic number: ");
         ans = Console.ReadLine();
         magicNumber = int.Parse(ans);
@@ -29,8 +33,11 @@ class Program
         {
             Console.WriteLine("You guessed it!");
         }
+
+       } while (guessNumber != magicNumber); 
         
-        
+
+
 
     }
 }
