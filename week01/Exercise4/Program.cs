@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 
 class Program
 {
@@ -33,6 +34,8 @@ class Program
         float average = 0;
         int len  = 0;
         int largestNumber = numbers[0];
+        int smallestPositive = int.MaxValue;
+    
 
         
         foreach (int x in numbers)
@@ -45,13 +48,45 @@ class Program
             {
                 largestNumber = x;
             }
-        }
-        Console.WriteLine($"The sum is: {sum}");
-        len = numbers.Count;
+
+           // find the smallest positive number
+            if ( x > 0 && x < smallestPositive)
+            {
+                smallestPositive = x;
+            }
+
+        }   
+         Console.WriteLine($"The sum is: {sum}");
+         len = numbers.Count;
          //Console.WriteLine($"The size is: {len}");
          average = sum / len; 
          Console.WriteLine($"The average is: {average}");
          Console.WriteLine($"The largest number is: {largestNumber}");
-      
+
+         if( smallestPositive == int.MaxValue)
+           {
+              Console.WriteLine("There are no positive numbers in the list");
+           }
+           else
+           {
+              Console.WriteLine($"The smallest positive number is : {smallestPositive}");
+           }
+         numbers.Sort();
+         Console.WriteLine($"The sorted list in ascending order is: ");
+         foreach (int x in numbers)
+         {
+            Console.WriteLine(x);
+         }
+
+         // To sort in descending order, you can use reverese method after so
+        Console.WriteLine($"The sorted list in descending order is: ");
+         numbers.Reverse();
+         foreach (int x in numbers)
+         {
+            Console.WriteLine(x);
+         }
+         
     }
 }
+
+
