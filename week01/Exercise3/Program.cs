@@ -10,8 +10,9 @@ class Program
         int number ;
         int guessCount = 0;
         bool playAgain = true;
-        Console.WriteLine("Hello World! This is the Exercise3 Project.");
-        
+        Console.WriteLine("The guessing game! This is the Exercise3 Project.");
+        Console.WriteLine("*******************************************");
+        Console.WriteLine("");
 
  do
  {
