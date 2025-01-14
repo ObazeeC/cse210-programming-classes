@@ -22,7 +22,7 @@ class Program
         job2._startYear = 2019;
         job2._endYear = 2024;
         //job2.DisplayJobDetails();
-       // Console.WriteLine(job1._company);
+        // Console.WriteLine(job1._company);
         // Console.WriteLine(job2._company);
         
 
