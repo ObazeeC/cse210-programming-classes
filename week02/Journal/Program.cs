@@ -8,8 +8,8 @@ class Program
         //Boolean choice = false;
         Console.WriteLine("Abstraction! This is the Journal Project.");
         Console.WriteLine("*****************************************");
-        Entry enter = new Entry();
-        PromptGenerator promp01 = new PromptGenerator();
+      //  Entry enter = new Entry();
+      //  PromptGenerator promp01 = new PromptGenerator();
         Journal j1 = new Journal();
    // do
     //{
@@ -17,8 +17,7 @@ class Program
     {
 
 
-    
-
+        
     
         Console.WriteLine("");
         Console.WriteLine("Please select one of the following options");
@@ -33,10 +32,15 @@ class Program
         switch(userInput)
         {
             case "1":
+            Entry enter = new Entry();
+            PromptGenerator promp01 = new PromptGenerator();
+            //Journal j1 = new Journal();
+
             enter._date = DateTime.Now.ToString();
             enter._promptText = promp01.GetRandomPrompt();
             string prompt = enter._promptText;
             Console.WriteLine(prompt);
+            Console.Write(">>");
             enter._entryText = Console.ReadLine();
             j1.AddEntry(enter);
             
@@ -49,6 +53,7 @@ class Program
             break;
 
             case "2":
+            Console.WriteLine();
             j1.DisplayAll();
            //string test = promp01.GetRandomPrompt();
            //Console.WriteLine(test);

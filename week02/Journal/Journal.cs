@@ -26,6 +26,7 @@ public void DisplayAll()
 {
     foreach(Entry x in _entries)
     {
+         Console.WriteLine();
          x.DisplayEntry();
         //Console.WriteLine(x._date);
         //Console.WriteLine(x._promptText);
