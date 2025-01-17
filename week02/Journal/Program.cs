@@ -23,8 +23,8 @@ class Program
         Console.WriteLine("Please select one of the following options");
         Console.WriteLine("1. Write");
         Console.WriteLine("2. Display");
-        Console.WriteLine("3. Load");
-        Console.WriteLine("4. Save");
+        Console.WriteLine("3. Save");
+        Console.WriteLine("4. Load");
         Console.WriteLine("5. Quit");
         Console.Write("What will you like to do ?");
         userInput = Console.ReadLine();
@@ -60,10 +60,16 @@ class Program
             break;
         
             case "3":
-            
+            Console.Write("Enter filename to save: ");
+            string myFileName = Console.ReadLine();
+            j1.SaveToFile(myFileName);
             break;
 
             case "4":
+            Console.Write("Enter filename to load: ");
+            string loadFileName = Console.ReadLine();
+            j1.LoadFromFile(loadFileName);
+            //Console.WriteLine(loadFileName);
             break;
 
             case "5":
