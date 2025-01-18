@@ -68,6 +68,7 @@ class Program
             break;
 
             case "5":
+            Console.WriteLine("Enter quote of the day");
             return;
             default:
             Console.WriteLine("Invalid, Please enter between 1 - 5 ");
