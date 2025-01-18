@@ -8,7 +8,8 @@ public class Journal
   public List<Entry> _entries = new List<Entry>();
 
    
-  public void AddEntry(Entry newEntry)
+// This line of code works well, passing Entry as Parameter
+/*  public void AddEntry(Entry newEntry)
   {
    
    
@@ -16,13 +17,29 @@ public class Journal
    // newEntry._promptText = p2.GetRandomPrompt();
   //  string prompt = newEntry._promptText;
    // Console.WriteLine(prompt);
-   // newEntry._entryText = Console.ReadLi ne();
+   // newEntry._entryText = Console.ReadLine();
    
     _entries.Add(newEntry);
-
     
   }
+  */
 
+
+// New Approach after tutor guide. Works fine too
+public void AddEntry()
+{
+  PromptGenerator prompt = new();
+
+  string promptUser = prompt.GetRandomPrompt();
+  Console.WriteLine(promptUser);
+  Console.Write(">");
+  string userInput = Console.ReadLine();
+  Entry entry = new ();
+  entry._date = DateTime.Now.ToString();
+  entry._promptText = promptUser;
+  entry._entryText = userInput;
+  _entries.Add(entry);
+}
 public void DisplayAll()
 {
     foreach(Entry x in _entries)

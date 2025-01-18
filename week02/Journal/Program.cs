@@ -5,14 +5,12 @@ class Program
     static void Main(string[] args)
     {
         string userInput = "";
-        //Boolean choice = false;
+         
         Console.WriteLine("Abstraction! This is the Journal Project.");
         Console.WriteLine("*****************************************");
-      //  Entry enter = new Entry();
-      //  PromptGenerator promp01 = new PromptGenerator();
+      
         Journal j1 = new Journal();
-   // do
-    //{
+   
     while(true)
     {
 
@@ -31,32 +29,30 @@ class Program
 
         switch(userInput)
         {
+           
             case "1":
-            Entry enter = new Entry();
-            PromptGenerator promp01 = new PromptGenerator();
-            //Journal j1 = new Journal();
+            j1.AddEntry();
+             // This line of code work well...
+             // Created the Entry and Prompt Generetor Object in the program file
+         
+             /* Entry enter = new Entry();
+             PromptGenerator promp01 = new PromptGenerator();
+             //Journal j1 = new Journal();
 
-            enter._date = DateTime.Now.ToString();
-            enter._promptText = promp01.GetRandomPrompt();
-            string prompt = enter._promptText;
-            Console.WriteLine(prompt);
-            Console.Write(">>");
-            enter._entryText = Console.ReadLine();
-            j1.AddEntry(enter);
-            
-          
-            /* 
-            enn1._date = "21/03/2024";
-            enn1._entryText = "Cooking rice and beans";
-            enn1._promptText = "When was that ?";
-            enn1.DisplayEntry();*/
+             enter._date = DateTime.Now.ToString();
+             enter._promptText = promp01.GetRandomPrompt();
+             string prompt = enter._promptText;
+             Console.WriteLine(prompt);
+             Console.Write(">>");
+             enter._entryText = Console.ReadLine();
+             j1.AddEntry(enter); */
             break;
 
             case "2":
             Console.WriteLine();
             j1.DisplayAll();
-           //string test = promp01.GetRandomPrompt();
-           //Console.WriteLine(test);
+            //string test = promp01.GetRandomPrompt();
+            //Console.WriteLine(test);
             break;
         
             case "3":
@@ -69,18 +65,16 @@ class Program
             Console.Write("Enter filename to load: ");
             string loadFileName = Console.ReadLine();
             j1.LoadFromFile(loadFileName);
-            //Console.WriteLine(loadFileName);
             break;
 
             case "5":
             return;
             default:
-            Console.WriteLine("Invalid option....");
-            //choice = true;
+            Console.WriteLine("Invalid, Please enter between 1 - 5 ");
             break;
         }
     }
-    //}while(!choice);
+   
 
     }
 }
