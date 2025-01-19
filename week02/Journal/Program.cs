@@ -29,7 +29,10 @@ class Program
 
         switch(userInput)
         {
-           
+            // EXceeding requirement
+            // I added two variables in the Entry class, allow user add more entry
+            // The first is allow user to add inpired quote "
+            // The second is to  to allow user choose whether to answer to random prompts or just summarize thier day.
             case "1":
             Console.WriteLine("Do you want to answer to a random prompt or write a brief summary of your day ?");
             Console.WriteLine("Answer 'Yes' to use random prompt, 'No' to summarize your day ?");
