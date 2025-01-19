@@ -44,6 +44,22 @@ public void AddEntry()
   entry._quotes = userQuote;
   _entries.Add(entry);
 }
+
+public void WriteSummary()
+{
+Console.WriteLine("Write a summary of your day");
+Console.Write(">>");
+string userInput = Console.ReadLine();
+Console.WriteLine("Enter Quotes/Inspirational Message");
+Console.Write(">>");
+string userQuote = Console.ReadLine();
+Entry entry = new();
+entry._date = DateTime.Now.ToString();
+entry._summary = userInput;
+entry._quotes = userQuote;
+_entries.Add(entry);
+
+}
 public void DisplayAll()
 {
     foreach(Entry x in _entries)
@@ -62,7 +78,7 @@ public void SaveToFile(string fileName)
  {
     foreach(Entry x in _entries)
     {
-        myWriter.WriteLine($"{x._date}|{x._promptText}|{x._entryText}|{x._quotes}");
+        myWriter.WriteLine($"{x._date}|{x._promptText}|{x._entryText}|{x._quotes} |{x._summary}");
        // myWriter.WriteLine(x._promptText);($"Date: {_date} -Prompt: {_promptText} \n{_entryText}");
        // myWriter.WriteLine(x._entryText);
     }
@@ -86,6 +102,7 @@ public void LoadFromFile(string fileName)
      entry._promptText = parts[1];
      entry._entryText = parts[2];
      entry._quotes = parts[3];
+     entry._summary = parts[4];
      // Add entry to list
      _entries.Add(entry);
       

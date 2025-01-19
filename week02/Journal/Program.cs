@@ -31,7 +31,19 @@ class Program
         {
            
             case "1":
-            j1.AddEntry();
+            Console.WriteLine("Do you want to answer to a random prompt or write a brief summary of your day ?");
+            Console.WriteLine("Answer 'Yes' to use random prompt, 'No' to summarize your day ?");
+            Console.Write(">>");
+            string input = Console.ReadLine();
+            if(input == "yes" || input == "Yes" || input == "YES")
+            {
+              j1.AddEntry();
+            }
+            else
+            {
+               j1.WriteSummary();
+            }
+            
              // This line of code work well...
              // Created the Entry and Prompt Generetor Object in the program file
          
@@ -68,7 +80,6 @@ class Program
             break;
 
             case "5":
-            Console.WriteLine("Enter quote of the day");
             return;
             default:
             Console.WriteLine("Invalid, Please enter between 1 - 5 ");
