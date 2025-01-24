@@ -26,12 +26,12 @@ public class Reference
 
     public void GetDisplayTextOne()
     {
-      Console.WriteLine($"{_book} {_chapter}:{_verse}");
+      Console.Write($"{_book} {_chapter}:{_verse} ");
       
     }
     public void GetDisplayText()
     {
-      Console.WriteLine($"{_book} {_chapter}:{_verse}-{_endVerse}");
+      Console.Write($"{_book} {_chapter}:{_verse}-{_endVerse} ");
       
     }
 
