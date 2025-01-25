@@ -52,7 +52,7 @@ public string GetFractionString()
 public double GetDecimalValue()
 {
     double top = _top;
-    double bottom = _bottom;
+    double bottom = _bottom; 
     return top / bottom;
 }
 }
