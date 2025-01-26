@@ -27,11 +27,13 @@ class Program
        // scripture02.GetDisplayText();
        // while(!scripture01.IsCompletelyHidden())
        // {  // }
-            
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.Write("Press enter to continue or type 'quite' to finish: ");
-            string input = Console.ReadLine();
+            string input = "";
+            while(true)
+            {
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.Write("Press enter to continue or type 'quite' to finish: ");
+                input = Console.ReadLine();
             if(input == "")
             {
                 scripture01.HideRandWords(1);
@@ -39,8 +41,17 @@ class Program
                 Console.Write("");
                 reference01.GetDisplayTextOne();
                 scripture01.GetDisplayText();
+                
         
-        }
+            }
+            else if(input == "quite" || input == "Quite" || input == "QUITE")
+            {
+                break;
+            }
+           
+
+            }
+            
          
 
         
