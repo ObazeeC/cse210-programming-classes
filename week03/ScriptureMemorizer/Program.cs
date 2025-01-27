@@ -28,14 +28,19 @@ class Program
        // while(!scripture01.IsCompletelyHidden())
        // {  // }
             string input = "";
-            while(true)
+            //while(true)
+            while(scripture01.HideRandWords(1))
             {
+              //if(scripture01.HideRandWords(1) == true)
+              // { // THIS
+
+              
                 Console.WriteLine("");
                 Console.WriteLine("");
                 Console.Write("Press enter to continue or type 'quite' to finish: ");
                 input = Console.ReadLine();
-            if(input == "")
-            {
+             if(input == "")
+             {
                 scripture01.HideRandWords(1);
                 Console.Clear();
                 Console.Write("");
@@ -43,14 +48,17 @@ class Program
                 scripture01.GetDisplayText();
                 
         
-            }
-            else if(input == "quite" || input == "Quite" || input == "QUITE")
-            {
+             }
+             else if(input == "quite" || input == "Quite" || input == "QUITE")
+             {
                 break;
-            }
+             }
            
-
-            }
+             // }else
+              //{
+                break;
+             // }
+            }// the block
             
          
 

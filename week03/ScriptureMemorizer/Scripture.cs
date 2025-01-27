@@ -24,7 +24,7 @@ public class Scripture
 
 
 
-public void HideRandWords(int numberToHide)
+public bool HideRandWords(int numberToHide)  // bool
 {
     // the hide method on the Word object
     // get display method on the Scripture object
@@ -37,8 +37,9 @@ public void HideRandWords(int numberToHide)
             _words[index].Hide();
             num++;
          }
-
+      
     }
+    return true;  // the return statement
 
 }
 
