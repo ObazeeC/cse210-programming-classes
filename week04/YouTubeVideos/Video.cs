@@ -7,10 +7,11 @@ public class Video
     public string _author = "";
     public int _length = 0;
 
-    public List <Comment> _comments = new();
+    public List<Video> _videos = new();
 
+    public List <Comment> _comments = new();
     
-    public void CommentOnAVideo()
+  /*  public void WriteCommentOnAVideo()
     {
        
          Comment comment = new();
@@ -26,6 +27,26 @@ public class Video
            // comment.DisplayComment();
       
         
+    }*/
+    public void DisplayVideoInfo()
+    {
+        foreach(var video in _videos)
+         {
+             Console.WriteLine($"{video._title} by {video._author}.  {video._length} seconds");
+             Console.WriteLine("Number of comment: ");
+             Console.WriteLine("***Comments***");
+              video.DisplayAllComment();
+             Console.WriteLine();
+         }
+       
+    }
+    public void DisplayAllComment()
+    {
+        foreach(var comment in _comments )
+        {   
+            
+            comment.DisplayComment();
+        }
     }
 
 }
