@@ -68,7 +68,7 @@ class Program
              Comment cb2 = new();
              Comment cb3 = new();
              Comment cb4 = new();
-             v3._author = "Ensign";
+             v3._author = "Ensign College";
              v3._title = "How to register for online courses";
              v3._length = 1000;
              cb1._name = "Godstime";

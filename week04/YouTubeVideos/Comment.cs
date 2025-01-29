@@ -6,7 +6,7 @@ public class Comment
 
 public void DisplayComment()
 {
-    Console.WriteLine($"{_text }. ><{_name}");
+    Console.WriteLine($"{_text }. | {_name}");
 }
 
 }
