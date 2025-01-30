@@ -18,7 +18,7 @@ public Address(string street, string city, string state, string country)
    _country = country;
 }
 
-// Create getters 
+// Create getters for the private variables
 public string GetStreet()
 {
   return _street;
@@ -55,6 +55,6 @@ public string GetCountry()
 
     public string GetAddress()
     {
-        return _street + "" + _city + "\n" + _state +"\n" + _country;
+        return _street + ", "  +   _city + "\n" + _state +"\n" + _country;
     }
 }
