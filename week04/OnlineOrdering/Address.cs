@@ -19,27 +19,11 @@ public Address(string street, string city, string state, string country)
 }
 
 // Create getters for the private variables
-public string GetStreet()
-{
-  return _street;
-}
 
-public string GetCity()
-{
-    return _city;
-}
 
-public string GetState()
-{
-    return _state;
-}
-
-public string GetCountry()
-{
-    return _country;
-}
     public bool IsInUSA()
     {
+        /*
         bool USA = false;
         if(_country == "USA" || _country == "United States")
         { 
@@ -50,10 +34,11 @@ public string GetCountry()
             USA = false;
         }
 
-        return USA;
+        return USA;*/
+        return _country.ToUpper() == "USA";
     }
 
-    public string GetAddress()
+    public string GetFullAddress()
     {
         return _street + ", "  +   _city + "\n" + _state +"\n" + _country;
     }

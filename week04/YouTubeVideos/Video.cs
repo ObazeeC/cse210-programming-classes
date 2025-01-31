@@ -47,7 +47,8 @@ public class Video
         int number = 0;
         foreach(var video in _videos)
         {
-          // number += video._comments.Count;
+            
+           number += video._comments.Count();
            
         }
         return number;
