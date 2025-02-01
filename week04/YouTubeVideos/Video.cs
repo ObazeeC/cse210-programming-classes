@@ -50,7 +50,7 @@ public class Video
     }
 
     public int GetTotalNumberOfComment()
-    {  // thi return the total number of Comments in the video list.
+    {  // this return the total number of Comments in the video list.
         int number = 0;
         foreach(var video in _videos)
         {
@@ -60,10 +60,6 @@ public class Video
         }
         return number;
     }
-
-
-   
-
 
     public void DisplayAllComment()
     {

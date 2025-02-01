@@ -37,10 +37,7 @@ class Program
              v1._comments.Add(c2);
              v1._comments.Add(c3);
              videos._videos.Add(v1);
-             //Console.WriteLine(videos.GetTotalNumberOfComment());
-             //v1.DisplayVideoInfo();
-             //Console.WriteLine("***Comments***");
-            // v1.DisplayAllComment();
+             
              
              Video v2 = new();
              Comment cc1 = new();
@@ -113,10 +110,7 @@ class Program
              v4._comments.Add(cd3);
              v4._comments.Add(cd4);
              
-             // put each of these videos in a list
-             // List<string> videos = new();
-             // videos.Add(v1);
-             //videos._videos.Add(v1);
+             
              videos._videos.Add(v2);
              videos._videos.Add(v3);
              videos._videos.Add(v4);
