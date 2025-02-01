@@ -11,7 +11,7 @@ class Program
     
         Console.WriteLine("YoutubeVideos! This is the YouTubeVideos Project.");
         Console.WriteLine();
-         Video videos = new();
+            Video videos = new();
         
          
              Video v1 = new();
@@ -36,7 +36,8 @@ class Program
              v1._comments.Add(c1);
              v1._comments.Add(c2);
              v1._comments.Add(c3);
-             
+             videos._videos.Add(v1);
+             //Console.WriteLine(videos.GetTotalNumberOfComment());
              //v1.DisplayVideoInfo();
              //Console.WriteLine("***Comments***");
             // v1.DisplayAllComment();
@@ -46,8 +47,10 @@ class Program
              Comment cc2 = new();
              Comment cc3 = new();
              Comment cc4 = new();
+             Comment cc5 = new();
+
              v2._author = "Penpower";
-             v2._title = "How to learn coding in 5 Mins";
+             v2._title = "How to learn coding in less than 6 months";
              v2._length = 500;
              cc1._name = "Aise";
              cc1._text = " Simple and rich video, thank you";
@@ -57,11 +60,14 @@ class Program
              cc3._text = " I wish the video was longer, nice work.";
              cc4._name = "Emmanuel";
              cc4._text = " could you please do another video, on how to use python ?";
+             cc5._name = "Eseiwi";
+             cc5._text = "Do I have to learn all languages";
 
              v2._comments.Add(cc1);
              v2._comments.Add(cc2);
              v2._comments.Add(cc3);
              v2._comments.Add(cc4);
+             v2._comments.Add(cc5);
 
              Video v3 = new();
              Comment cb1 = new();
@@ -110,17 +116,17 @@ class Program
              // put each of these videos in a list
              // List<string> videos = new();
              // videos.Add(v1);
-             videos._videos.Add(v1);
+             //videos._videos.Add(v1);
              videos._videos.Add(v2);
              videos._videos.Add(v3);
              videos._videos.Add(v4);
             
 
-             Console.WriteLine("___Video info___ ");
+             //Console.WriteLine("___Video info___ ");
              videos.DisplayVideoInfo();
-             //Console.WriteLine("***Comments***");
-             //v4.DisplayAllComment();
-             //videos._comments.DisplayAllComment();
+             Console.WriteLine("____Total number of Comments____");
+             Console.WriteLine(videos.GetTotalNumberOfComment());
+             
 
 
     }

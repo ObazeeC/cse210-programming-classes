@@ -31,28 +31,40 @@ public class Video
     public void DisplayVideoInfo()
     {
         foreach(var video in _videos)
-         {
+         {    
+             int number = 0;
+             Console.WriteLine("___Video info___ ");
              Console.WriteLine($"{video._title} by {video._author}.  {video._length} seconds");
+             number += video._comments.Count;
              Console.Write("Number of comment: ");
-             Console.WriteLine(video.GetNumberOfComment());
+             Console.WriteLine(number);
+             //Console.WriteLine(video.GetNumberOfComment());
              Console.WriteLine("***Comments***");
              video.DisplayAllComment();
              Console.WriteLine();
+             
+             
+             
          }
        
     }
 
-    public int GetNumberOfComment()
-    {
+    public int GetTotalNumberOfComment()
+    {  // thi return the total number of Comments in the video list.
         int number = 0;
         foreach(var video in _videos)
         {
             
-           number += video._comments.Count();
+           number += video._comments.Count;
            
         }
         return number;
     }
+
+
+   
+
+
     public void DisplayAllComment()
     {
         foreach(var comment in _comments )
@@ -61,7 +73,7 @@ public class Video
             comment.DisplayComment();
         }
     }
-
+    
 
 
 }
