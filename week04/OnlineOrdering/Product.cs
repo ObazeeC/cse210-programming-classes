@@ -30,6 +30,6 @@ public Product(string name, int id, double price, int quantity)
    // packing label
    public string GetPackingLabel002()
    {
-    return $"{_name} (ID: {_id})";
+    return $"{_name} [ID: {_id}]";
    }
 }

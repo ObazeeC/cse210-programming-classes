@@ -50,15 +50,17 @@ public Order(List<Product> product, Customer customer)
         return totalCost + shippingCost ;
     }
 
-    public string GetPackingLabel()
+    public void GetPackingLabel() 
     {
-       // return(GetPackingLabel002();
-       string PackingLabel = "";
+       
+        string PackingLabel = "";
        foreach(var product in _product)
        {
         PackingLabel = product.GetPackingLabel002();
+        Console.WriteLine(PackingLabel);
        }
-       return PackingLabel;
+      
+    
     }
     public string GetShippingLabel()
     {
