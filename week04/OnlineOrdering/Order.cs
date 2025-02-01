@@ -10,20 +10,6 @@ public Order(List<Product> product, Customer customer)
     _product = product;
     _customer = customer;
     
-    /*
-    foreach(var client in _customer)
-
-    {
-        if(client.LiveInUnitedState() == true)
-        {
-            shipmentCost = 5;
-        }
-        else
-        {
-            shipmentCost = 5 + 30;
-        }
-        
-    }*/
 
     
 }
@@ -35,7 +21,7 @@ public Order(List<Product> product, Customer customer)
         
         foreach(var product in _product)
         {
-            totalCost = product.GetTotalCostOfProduct();
+            totalCost += product.GetTotalCostOfProduct();
         }
         shipment = _customer.LiveInUnitedState();
         if(shipment == true)
