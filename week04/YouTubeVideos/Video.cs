@@ -32,12 +32,12 @@ public class Video
     {
         foreach(var video in _videos)
          {    
-             int number = 0;
+             int numberOfComments = 0;
              Console.WriteLine("___Video info___ ");
              Console.WriteLine($"{video._title} by {video._author}.  {video._length} seconds");
-             number += video._comments.Count;
+             numberOfComments += video._comments.Count;
              Console.Write("Number of comment: ");
-             Console.WriteLine(number);
+             Console.WriteLine(numberOfComments);
              //Console.WriteLine(video.GetNumberOfComment());
              Console.WriteLine("***Comments***");
              video.DisplayAllComment();
