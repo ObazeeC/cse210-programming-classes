@@ -55,10 +55,36 @@ class Program
                  b.ShowSpinner(10);
                 break;
             
-
-            
                 case "2":
-               
+               ListingActivity L = new("","",5);
+               Console.WriteLine();
+                 
+                 L.DisplayStartingMessage();
+                 Console.WriteLine();
+                 Console.Write("How long, in seconds would you like for your session?");
+                  UserInput = Console.ReadLine();
+                 //int timeInSec = int.Parse(UserInput);
+                 time = int.Parse(UserInput);
+                 Console.Clear();
+                 Console.WriteLine("Get ready...");
+                 L.ShowSpinner(10) ;
+                
+                 Console.Write("You may begin in : ");
+                  L.ShowCountDown(6);
+                  startTime = DateTime.Now;
+                  endTime = startTime.AddSeconds(time);
+                 Console.Clear();
+                 L.GetRandomPrompt();
+                 Console.WriteLine("You may begin:");
+                 while(DateTime.Now < endTime)
+                 {
+                   L.Run();
+                 }
+                 Console.WriteLine("Weldone!!!");
+                 //int total = L.GetCount
+                 Console.WriteLine($"You have listed {L.GetCount()} item ");
+               //L.GetRandomPrompt();
+
                
                 break;
                
