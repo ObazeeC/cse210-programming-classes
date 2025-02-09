@@ -2,7 +2,7 @@ using System;
 public class BreathingActivity : Activity
 {
 
-public BreathingActivity(string name, string description, int duration) : base (name, description, duration)
+public BreathingActivity(string name, int duration) : base (name,  duration)
 {
  _startingMessage = "This activity will help you relax by walking your through breathing in and out slowly. Clear you mind and focus on your breathing";
 }

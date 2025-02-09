@@ -15,15 +15,10 @@ public class ListingActivity : Activity
        "** What kind of places do you like going to reflect and reset **"
     };
 
-public ListingActivity(string name, string description, int duration, List<string> prompts) : base (name, description, duration)
+public ListingActivity(string name, int duration) :base (name, duration)
 {
-    _prompts = prompts;
-    _startingMessage = "This activity will help you reflect on the good things in your life by havng you list as many thing as you can in a certain area.";
-    
 
-}
-public ListingActivity(string name, string description, int duration) :base (name, description, duration)
-{
+    _startingMessage = "This activity will help you reflect on the good things in your life by havng you list as many thing as you can in a certain area."; 
 
 }
 public Random random = new();

@@ -6,15 +6,10 @@ class Program
     {
         Console.WriteLine("***Hello World! This is the Mindfulness Project.***");
         Console.Write("");
-       /*
-        Thread.Sleep(1500);
-        Console.Write("\b \b"); // Erase the + character
-        Thread.Sleep(500);
-        Console.Write("-"); // Replace it with the - character
-        */
+       
         string input = "";
-       // Activity s = new("breathing", "Description", 3);
-    
+        int time = 0;
+       
         
         while(true)
         {
@@ -29,16 +24,15 @@ class Program
             switch(input)
             {
                 case "1":
-                 int time = 0;
+                 
                  string activity = "Breathing";
-                 BreathingActivity b = new(activity,"This activity will help you relax by walking your through breathing in and out slowly. Clear you mind and focus on your breathing", time);
+                 BreathingActivity b = new(activity, time);
                  Console.WriteLine();
                  Console.WriteLine($"Welcome to the {activity} Activity. ");
                  b.DisplayStartingMessage();
                  Console.WriteLine();
                  Console.Write("How long, in seconds would you like for your session?");
                  string UserInput = Console.ReadLine();
-                 //int timeInSec = int.Parse(UserInput);
                  time = int.Parse(UserInput);
                  Console.Clear();
                  Console.WriteLine("Get ready...");
@@ -56,36 +50,38 @@ class Program
                 break;
             
                 case "2":
-               ListingActivity L = new("","",5);
-               Console.WriteLine();
-                 
-                 L.DisplayStartingMessage();
+                 activity = "Listing Activity";
+                 ListingActivity listing = new(activity,time);
+                 Console.WriteLine();
+                 Console.WriteLine($"Welcome to the {activity} . ");
+                 listing.DisplayStartingMessage();
                  Console.WriteLine();
                  Console.Write("How long, in seconds would you like for your session?");
-                  UserInput = Console.ReadLine();
-                 //int timeInSec = int.Parse(UserInput);
+                 UserInput = Console.ReadLine();
+               
                  time = int.Parse(UserInput);
                  Console.Clear();
                  Console.WriteLine("Get ready...");
-                 L.ShowSpinner(10) ;
+                 listing.ShowSpinner(10) ;
                 
                  Console.Write("You may begin in : ");
-                  L.ShowCountDown(6);
-                  startTime = DateTime.Now;
-                  endTime = startTime.AddSeconds(time);
+                 listing.ShowCountDown(6);
+                 startTime = DateTime.Now;
+                 endTime = startTime.AddSeconds(time);
                  Console.Clear();
-                 L.GetRandomPrompt();
+
+                 Console.WriteLine("List as many response you can to the following prompt: ");
+                 listing.GetRandomPrompt();
                  Console.WriteLine("You may begin:");
                  while(DateTime.Now < endTime)
                  {
-                   L.Run();
+                   listing.Run();
                  }
                  Console.WriteLine("Weldone!!!");
-                 //int total = L.GetCount
-                 Console.WriteLine($"You have listed {L.GetCount()} item ");
-               //L.GetRandomPrompt();
-
-               
+             
+                 Console.WriteLine($"You have listed {listing.GetCount()} item ");
+                 listing.ShowSpinner(10) ;
+                 Console.Clear();
                 break;
                
 

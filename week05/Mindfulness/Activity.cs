@@ -8,10 +8,10 @@ public class Activity
  protected string _startingMessage = "";
 
 // constructor
- public Activity(string name, string description, int duration)
+ public Activity(string name, int duration)
   {
     _activityName = name;
-    _description = description;
+ 
     _duration = duration;
     
   }
@@ -24,13 +24,7 @@ public string GetActivityName()
   public void DisplayStartingMessage()
   {  
     Console.WriteLine(_startingMessage);
-     //Console.WriteLine($"Welcome to the {_activityName} Activity. ");
-      
-      
-
-     // reason while I need user interaction here.
-
-     
+  
      
      
   }
