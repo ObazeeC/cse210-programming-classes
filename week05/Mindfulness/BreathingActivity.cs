@@ -4,23 +4,21 @@ public class BreathingActivity : Activity
 
 public BreathingActivity(string name, string description, int duration) : base (name, description, duration)
 {
-
+ _startingMessage = "This activity will help you relax by walking your through breathing in and out slowly. Clear you mind and focus on your breathing";
 }
 
 public void Run()
 {
-    /*
-         Console.WriteLine($"Welcome to the {GetActivityName} Activity. ");
-         Console.WriteLine("");
-         Console.WriteLine("This activity will help you relax by walking your through breathing in and out slowly. Clear you mind and focus on your breathing");
-         Console.WriteLine(""); 
-         */
-         Console.WriteLine("Breath in...");
-         // in between
-         Console.WriteLine("Breath out...");
-
-         // I want run this repeatedly until the time elapse.
-
+         
+          Console.Write("Breathe in...");
+          ShowCountDown(6);
+          Console.WriteLine();
+          Thread.Sleep(1000);
+          Console.Write("Now Breathe out...");
+          ShowCountDown(6);
+          Thread.Sleep(1000);
+          Console.WriteLine();
+          Console.WriteLine();
 
 }
 }

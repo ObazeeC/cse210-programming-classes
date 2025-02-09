@@ -5,14 +5,17 @@ public class Activity
  private string _description = "";
  private int _duration = 0;
 
+ protected string _startingMessage = "";
+
 // constructor
  public Activity(string name, string description, int duration)
   {
     _activityName = name;
     _description = description;
     _duration = duration;
+    
   }
-int timeInSec = 0;
+//int timeInSec = 0;
 public string GetActivityName()
 {
     return _activityName;
@@ -20,10 +23,9 @@ public string GetActivityName()
   // methods
   public void DisplayStartingMessage()
   {  
-     Console.WriteLine($"Welcome to the {_activityName} Activity. ");
-     Console.WriteLine("How long, in seconds would you like for your session?");
-      string UserInput = Console.ReadLine();
-      timeInSec = int.Parse(UserInput);
+    Console.WriteLine(_startingMessage);
+     //Console.WriteLine($"Welcome to the {_activityName} Activity. ");
+      
       
 
      // reason while I need user interaction here.
@@ -108,7 +110,7 @@ public string GetActivityName()
 
 
   //}
-  public void ShowSpinner()
+  public void ShowSpinner(int timer)
   {
     List <string> spinner = new();
     spinner.Add("|");
@@ -119,16 +121,9 @@ public string GetActivityName()
     spinner.Add("/");
     spinner.Add("-");
     spinner.Add("\\");
-    /*
-    foreach (string y in spinner)
-    {
-        Console.Write(y);
-        Thread.Sleep(1000);
-        Console.Write("\b \b");
-    }
-   */
+  
    DateTime startTime = DateTime.Now;
-   DateTime endTime = startTime.AddSeconds(timeInSec);
+   DateTime endTime = startTime.AddSeconds(timer);
    int i = 0;
    while(DateTime.Now < endTime)
    {
@@ -161,7 +156,7 @@ public string GetActivityName()
         Thread.Sleep(1000);
         Console.Write("\b \b");
      }
-     Console.WriteLine("Done");
+     //Console.WriteLine("Done");
 
   }
 }
