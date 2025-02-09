@@ -25,69 +25,82 @@ class Program
             {
                 case "1":
                  
-                 string activity = "Breathing";
-                 BreathingActivity b = new(activity, time);
-                 Console.WriteLine();
-                 Console.WriteLine($"Welcome to the {activity} Activity. ");
-                 b.DisplayStartingMessage();
-                 Console.WriteLine();
-                 Console.Write("How long, in seconds would you like for your session?");
-                 string UserInput = Console.ReadLine();
-                 time = int.Parse(UserInput);
-                 Console.Clear();
-                 Console.WriteLine("Get ready...");
-                 b.ShowSpinner(10) ;
-                 DateTime startTime = DateTime.Now;
-                 DateTime endTime = startTime.AddSeconds(time);
-                 Console.Clear();
-                 while(DateTime.Now < endTime)
-                 {
-                   b.Run();
-                 }
-                 Console.WriteLine("Done!!!");
-                 Console.WriteLine($"You have completed {time} seconds exercise.");
-                 b.ShowSpinner(10);
+                    string activity = "Breathing";
+                    BreathingActivity b = new(activity, time);
+                    Console.WriteLine();
+                    Console.WriteLine($"Welcome to the {activity} Activity. ");
+                    b.DisplayStartingMessage();
+                    Console.WriteLine();
+                    Console.Write("How long, in seconds would you like for your session?");
+                    string UserInput = Console.ReadLine();
+                    time = int.Parse(UserInput);
+                    Console.Clear();
+                    Console.WriteLine("Get ready...");
+                    b.ShowSpinner(10) ;
+                    DateTime startTime = DateTime.Now;
+                    DateTime endTime = startTime.AddSeconds(time);
+                    Console.Clear();
+                    while(DateTime.Now < endTime)
+                    {
+                    b.Run();
+                    }
+                    //Console.WriteLine("Done!!!");
+                    //Console.WriteLine($"You have completed {time} seconds exercise.");
+                    b.DisplayEndingMessage();
+                    b.ShowSpinner(10);
                 break;
             
                 case "2":
-                 activity = "Listing Activity";
-                 ListingActivity listing = new(activity,time);
-                 Console.WriteLine();
-                 Console.WriteLine($"Welcome to the {activity} . ");
-                 listing.DisplayStartingMessage();
-                 Console.WriteLine();
-                 Console.Write("How long, in seconds would you like for your session?");
-                 UserInput = Console.ReadLine();
-               
-                 time = int.Parse(UserInput);
-                 Console.Clear();
-                 Console.WriteLine("Get ready...");
-                 listing.ShowSpinner(10) ;
+                    activity = "Listing Activity";
+                    ListingActivity listing = new(activity,time);
+                    Console.WriteLine();
+                    Console.WriteLine($"Welcome to the {activity} . ");
+                    listing.DisplayStartingMessage();
+                    Console.WriteLine();
+                    Console.Write("How long, in seconds would you like for your session?");
+                    UserInput = Console.ReadLine();
+                    time = int.Parse(UserInput);
+                    Console.Clear();
+                    Console.WriteLine("Get ready...");
+                    listing.ShowSpinner(10) ;
+                    
+                    Console.Write("You may begin in : ");
+                    listing.ShowCountDown(6);
+                    startTime = DateTime.Now;
+                    endTime = startTime.AddSeconds(time);
+                    Console.Clear();
+
+                    Console.WriteLine("List as many response you can to the following prompt: ");
+                    listing.GetRandomPrompt();
+                    Console.WriteLine("You may begin:");
+                    while(DateTime.Now < endTime)
+                    {
+                    listing.Run();
+                    }
+                    Console.WriteLine("Weldone!!!");
                 
-                 Console.Write("You may begin in : ");
-                 listing.ShowCountDown(6);
-                 startTime = DateTime.Now;
-                 endTime = startTime.AddSeconds(time);
-                 Console.Clear();
-
-                 Console.WriteLine("List as many response you can to the following prompt: ");
-                 listing.GetRandomPrompt();
-                 Console.WriteLine("You may begin:");
-                 while(DateTime.Now < endTime)
-                 {
-                   listing.Run();
-                 }
-                 Console.WriteLine("Weldone!!!");
-             
-                 Console.WriteLine($"You have listed {listing.GetCount()} item ");
-                 listing.ShowSpinner(10) ;
-                 Console.Clear();
+                    Console.WriteLine($"You have listed {listing.GetCount()} item ");
+                    listing.ShowSpinner(10) ;
+                    Console.Clear();
                 break;
-               
 
-            
                 case "3":
-              
+                activity = "Reflection";
+                    ReflectionActivity reflection = new(activity, time);
+                    Console.WriteLine();
+                    Console.WriteLine($"Welcome to the {activity}");
+                    reflection.DisplayStartingMessage();
+                    Console.WriteLine();
+                    Console.Write("How long, in seconds, would you like for your session ? ");
+                    UserInput = Console.ReadLine();
+                    time = int.Parse(UserInput);
+                    Console.Clear();
+                    Console.WriteLine("Get ready...");
+                    reflection.ShowSpinner(10) ;
+                    //test getrandom prompt
+                    reflection.GetRandomPrompt();
+                
+
                 break;
             
 
