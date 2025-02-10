@@ -25,7 +25,7 @@ public class ReflectionActivity : Activity
     ;
 public ReflectionActivity(string name, int duration) : base(name, duration)
 {
-    _startingMessage = "This activity will help you reflect on times in  your life when you have shown strength and resilience. \nThis will help you recongnize the power you have and how you can use it in other aspect of your life.";
+    _startingMessage = "This activity will help you reflect on times in  your life when you have shown strength and resilience. This will help you recongnize the power you have and how you can use it in other aspect of your life.";
 }
 
 public string GetRandomPrompt()

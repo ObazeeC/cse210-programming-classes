@@ -113,7 +113,7 @@ class Program
                     Console.WriteLine();
                     Console.WriteLine("Consider the following prompt:");
                     Console.WriteLine();
-                    Console.WriteLine();
+                    reflection.DisplayPrompt();
                     Console.WriteLine("When you have something in mind, press enter to continue");
                     string enter = Console.ReadLine();
                     if(enter == "")
@@ -129,9 +129,12 @@ class Program
                              reflection.Run();
                          }
                     }
-                    //reflection.DisplayQuestion();
-                
-
+                    Console.WriteLine();
+                    reflection.DisplayEndingMessage();
+                    reflection.ShowSpinner(6);
+                    Console.WriteLine($"You have completed {time} seconds exercise.");
+                    reflection.ShowSpinner(6);
+                    Console.Clear();
                 break;
             
 
