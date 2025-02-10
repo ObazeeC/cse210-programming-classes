@@ -28,9 +28,32 @@ public ReflectionActivity(string name, int duration) : base(name, duration)
     _startingMessage = "This activity will help you reflect on times in  your life when you have shown strength and resilience. \nThis will help you recongnize the power you have and how you can use it in other aspect of your life.";
 }
 
-public void GetRandomPrompt()
+public string GetRandomPrompt()
 {
     int index = random.Next(_prompts.Count);
-    Console.WriteLine(_prompts[index]);
+   // Console.WriteLine(_prompts[index]);
+   string prompt = _prompts[index];
+   return prompt;
+}
+public string GetRandomQuestion()
+{
+    int index = random.Next(_questions.Count);
+    string question = _questions[index];
+    return question;
+}
+public void DisplayQuestion()
+{
+    Console.Write(GetRandomQuestion());
+}
+public void DisplayPrompt()
+{
+    Console.WriteLine(GetRandomPrompt());
+}
+public void Run()
+{
+    DisplayQuestion();
+    ShowSpinner(10);
+    Thread.Sleep(1000);
+    Console.WriteLine();
 }
 }

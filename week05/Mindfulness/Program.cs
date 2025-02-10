@@ -28,10 +28,13 @@ class Program
                     string activity = "Breathing";
                     BreathingActivity b = new(activity, time);
                     Console.WriteLine();
+                    b.DisplayStartingMessage();
+                    Console.Clear();
                     Console.WriteLine($"Welcome to the {activity} Activity. ");
+                    Console.WriteLine();
                     b.DisplayStartingMessage();
                     Console.WriteLine();
-                    Console.Write("How long, in seconds would you like for your session?");
+                    Console.Write("How long, in seconds would you like for your session : ");
                     string UserInput = Console.ReadLine();
                     time = int.Parse(UserInput);
                     Console.Clear();
@@ -44,20 +47,25 @@ class Program
                     {
                     b.Run();
                     }
-                    //Console.WriteLine("Done!!!");
-                    //Console.WriteLine($"You have completed {time} seconds exercise.");
                     b.DisplayEndingMessage();
-                    b.ShowSpinner(10);
+                    b.ShowSpinner(6);
+                    Console.WriteLine($"You have completed {time} seconds exercise.");
+                    b.ShowSpinner(6);
+                    Console.Clear();
+                    
                 break;
             
                 case "2":
                     activity = "Listing Activity";
                     ListingActivity listing = new(activity,time);
                     Console.WriteLine();
-                    Console.WriteLine($"Welcome to the {activity} . ");
+                    listing.DisplayStartingMessage();
+                    Console.Clear();
+                    Console.WriteLine($"Welcome to the {activity} Activity. ");
+                    Console.WriteLine();
                     listing.DisplayStartingMessage();
                     Console.WriteLine();
-                    Console.Write("How long, in seconds would you like for your session?");
+                    Console.Write("How long, in seconds would you like for your session : ");
                     UserInput = Console.ReadLine();
                     time = int.Parse(UserInput);
                     Console.Clear();
@@ -77,28 +85,51 @@ class Program
                     {
                     listing.Run();
                     }
-                    Console.WriteLine("Weldone!!!");
-                
-                    Console.WriteLine($"You have listed {listing.GetCount()} item ");
-                    listing.ShowSpinner(10) ;
+                    listing.DisplayEndingMessage();
+                    listing.ShowSpinner(6);
+                    Console.WriteLine($"You have completed {time} seconds exercise.");
+                    listing.ShowSpinner(6);
                     Console.Clear();
+                    
                 break;
 
                 case "3":
                 activity = "Reflection";
                     ReflectionActivity reflection = new(activity, time);
                     Console.WriteLine();
-                    Console.WriteLine($"Welcome to the {activity}");
+                    reflection.DisplayStartingMessage();
+                    Console.Clear();
+                    Console.WriteLine($"Welcome to the {activity} Activity. ");
+                    Console.WriteLine();
                     reflection.DisplayStartingMessage();
                     Console.WriteLine();
-                    Console.Write("How long, in seconds, would you like for your session ? ");
+                    Console.Write("How long, in seconds would you like for your session : ");
                     UserInput = Console.ReadLine();
                     time = int.Parse(UserInput);
                     Console.Clear();
                     Console.WriteLine("Get ready...");
                     reflection.ShowSpinner(10) ;
                     //test getrandom prompt
-                    reflection.GetRandomPrompt();
+                    Console.WriteLine();
+                    Console.WriteLine("Consider the following prompt:");
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine("When you have something in mind, press enter to continue");
+                    string enter = Console.ReadLine();
+                    if(enter == "")
+                    {
+                        Console.WriteLine("Now ponder on each of the following question as they related to this experience.");
+                        Console.Write("You may begin in : ");
+                        reflection.ShowCountDown(6);
+                        startTime = DateTime.Now;
+                        endTime = startTime.AddSeconds(time);
+                        Console.Clear();
+                         while(DateTime.Now < endTime)
+                         {
+                             reflection.Run();
+                         }
+                    }
+                    //reflection.DisplayQuestion();
                 
 
                 break;

@@ -31,10 +31,7 @@ public string GetActivityName()
   public void DisplayEndingMessage()
   {
      Console.WriteLine("Well done!!!");
-     Console.WriteLine("");
-     Console.WriteLine($"You have completed another {_duration} seconds of the  {_activityName} activity");
 
-     //ShowSpinner(_duration);
   }
  // public void ShowSpinner(int seconds)
 
