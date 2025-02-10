@@ -12,33 +12,47 @@ public class ReflectionActivity : Activity
         "*** Describe a moment in your life that marked a significant turning point.***",
         "*** Think of seemingly small or everyday challenge that you face regularly. ***",
     };
+    private List<string> _prompt02;
     private List<string> _questions = new()
     {
         "> What was the most challenging  part of the task ? ",
         "> How did you feel when it was complete ? ",
         "> How did you stay motivated to overcome this obstacle ? ",
         "> What is your favorite thing about this experience ? ",
-        "> What was the most challenging  part of the task ? ",
+        "> What inspiration did received from it ? ",
         "> What positive changes or growth emerged from this difficult time?",
         "> What are the key factors that contributed to your struggle?"
     }
     ;
+        private List<string> _question02;
 public ReflectionActivity(string name, int duration) : base(name, duration)
 {
     _startingMessage = "This activity will help you reflect on times in  your life when you have shown strength and resilience. This will help you recongnize the power you have and how you can use it in other aspect of your life.";
+    _prompt02 = new(_prompts);  
+    _question02 = new(_questions); 
 }
 
 public string GetRandomPrompt()
 {
-    int index = random.Next(_prompts.Count);
-   // Console.WriteLine(_prompts[index]);
-   string prompt = _prompts[index];
-   return prompt;
+    if(_prompt02.Count == 0)
+    {
+        _prompt02 = new(_prompts); // Reinitialize the list when it is empty
+    }   
+    int index = random.Next(_prompt02.Count);
+    string prompt = _prompts[index];
+    _prompt02.RemoveAt(index); // Remove the select prompt from the list
+                
+    return prompt;
 }
 public string GetRandomQuestion()
 {
-    int index = random.Next(_questions.Count);
-    string question = _questions[index];
+    if(_question02.Count == 0)
+    {
+        _question02 = new(_questions); // Reinitialize the list when it is empty.(suppose to course it to start again from the begining once all items in the list are exhausted)
+    }
+    int index = random.Next(_question02.Count);
+    string question = _question02[index]; 
+    _question02.RemoveAt(index);   // Remove the selected question
     return question;
 }
 public void DisplayQuestion()
