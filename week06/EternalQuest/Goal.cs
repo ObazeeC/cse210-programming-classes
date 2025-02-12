@@ -1,5 +1,6 @@
 using System;
-public class Goal
+using System.Reflection.Metadata.Ecma335;
+public abstract class Goal
 {
     private string _shortName = "";
     private string _description = "";
@@ -12,6 +13,16 @@ public class Goal
         _points = points;
     }
 
-    
+    public abstract void RecordEvent();
+    public abstract bool IsComplete();
+    public virtual string GetDetailsString()
+    {
+        // return the details of a goal that could be shown in a list
+        // include the checkbox,the short name, the description
+        string goal = $"[ ] {_shortName} ({_description})";
+        return goal;
+        
+    }
+    public abstract string GetStringRepresentation();
 
 }

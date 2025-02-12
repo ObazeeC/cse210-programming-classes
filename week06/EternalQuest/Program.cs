@@ -19,7 +19,7 @@ class Program
         switch(input)
         {
             case "1":
-            manager.CreateDetails();
+            manager.CreateGoal();
             break;
 
             case "2":

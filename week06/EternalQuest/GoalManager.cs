@@ -21,6 +21,9 @@ public class GoalManager
        Console.WriteLine("6. Quite");
        Console.Write("Select a choice from the menu: ");
        
+
+
+
        
     }
 
@@ -37,7 +40,7 @@ public class GoalManager
     {
 
     }
-    public void CreateDetails()
+    public void CreateGoal()
     {
 
     }
