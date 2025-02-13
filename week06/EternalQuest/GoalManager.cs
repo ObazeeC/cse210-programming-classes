@@ -10,8 +10,8 @@ public class GoalManager
 
     public void Start()
     {
-       Console.WriteLine();
-       DisplayPlayerInfo();
+       //Console.WriteLine();
+       
        Console.WriteLine("Menu Options: ");
        Console.WriteLine("1. Create New Goal");
        Console.WriteLine("2. List Goals");
@@ -29,7 +29,7 @@ public class GoalManager
 
     public void DisplayPlayerInfo()
     {
-       Console.WriteLine("You have not point yet");
+       Console.WriteLine("You have no point yet");
        Console.WriteLine();
     }
     public void ListGoalNames()
@@ -38,10 +38,16 @@ public class GoalManager
     }
     public void ListGoalDetails()
     {
-
+       Console.WriteLine("The types of Goals are :");
+       Console.WriteLine("1. Simple Goal");
+       Console.WriteLine("2. Eternal Goal");
+       Console.WriteLine("3. Checklist Goal");
+       Console.WriteLine("");
     }
     public void CreateGoal()
     {
+     ListGoalDetails();
+     
 
     }
     public void RecordEvent()
