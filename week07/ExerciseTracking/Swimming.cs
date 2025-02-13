@@ -10,24 +10,28 @@ public class Swimming : Activity
 
      public override double GetDistance()
     {
-        return 0;
+        return (_numberOfLaps * 50) / (1000 * 0.62);
     }
 
     public override double GetSpeed()
     {
         // speed is 60 / pace
-        
-        return 0;
-   
+        double distance = GetDistance();
+        double minutes = GetLengthInMinute();
+        double speed = (distance / minutes ) * 60;
+        return speed;
+
     }
     public override double GetPace()
     {
         
-        //pace is time/ distance
-       return 0;
+        double speed = GetSpeed();
+        double pace = 60 / speed;
+        return pace;
     }
     public override string GetSummary()
-    {
-        return $"{GetDate()} Cycling ({GetLengthInMinute()} min) - Distance {GetDistance()} miles, Speed {GetSpeed()} mph, Pace: {GetPace()} min per mile";
+    { 
+        // use :F2 to format after two decimal
+        return $"{GetDate()} Swimming ({GetLengthInMinute()} min) - Distance {GetDistance():F2} miles, Speed {GetSpeed():F2} mph, Pace: {GetPace():F2} min per mile";
     }
 }
