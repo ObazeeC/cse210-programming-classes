@@ -12,14 +12,27 @@ public abstract class Goal
         _description = description;
         _points = points;
     }
+public string GetGoalName()
+{
+    return _shortName;
+}
 
+public string GetGoalDescription()
+{
+    return _description;
+}
+
+public string GetGoalPoints()
+{
+    return _points;
+}
     public abstract void RecordEvent();
     public abstract bool IsComplete();
     public virtual string GetDetailsString()
     {
         // return the details of a goal that could be shown in a list
         // include the checkbox,the short name, the description
-        string goal = $"[ ] {_shortName} ({_description})";
+        string goal = $"[ ] {_shortName} {_description}  {_points}";
         return goal;
         
     }

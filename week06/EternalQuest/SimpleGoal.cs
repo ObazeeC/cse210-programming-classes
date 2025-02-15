@@ -12,13 +12,20 @@ public class SimpleGoal : Goal
     {
         
     }
-    public override bool IsComplete()
+    public  override bool IsComplete()
     {
        return true; // 
     }
 
     public override string GetStringRepresentation()
     {
+        /*
+        string name = GetGoalName();
+        string description = GetGoalDescription();
+        string points = GetGoalPoints();
+      //  Console.WriteLine($"[] goal Information: {name} {description} {points}" );
+        return $"[] goal Information: {name} {description} {points}";
+        */
         return "";
     }
 }
